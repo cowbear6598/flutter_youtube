@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_youtube/extensions/schemas/user.dart';
 import 'package:flutter_youtube/go_router/app_router.dart';
 import 'package:go_router/go_router.dart';
 
@@ -36,7 +37,16 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   void _goToExtensionScreen() {
-    context.push('/extension');
+    User user = User(
+      last_login_time: 1695741130,
+    );
+
+    context.push('/extension?number=30&number2=40', extra: user);
+
+    // context.pushNamed('extension', pathParameters: {
+    //   'number': '30',
+    //   'number2': '50',
+    // });
   }
 
   @override

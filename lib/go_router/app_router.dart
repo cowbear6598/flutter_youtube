@@ -1,3 +1,4 @@
+import 'package:flutter_youtube/extensions/schemas/user.dart';
 import 'package:flutter_youtube/main.dart';
 import 'package:flutter_youtube/screens/extension_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -10,7 +11,16 @@ final router = GoRouter(
     ),
     GoRoute(
       path: '/extension',
-      builder: (context, state) => const ExtensionScreen(),
+      name: 'extension',
+      builder: (context, state) {
+        User user = state.extra! as User;
+
+        return ExtensionScreen(
+          number: int.parse(state.uri.queryParameters['number']!),
+          number2: int.parse(state.uri.queryParameters['number2']!),
+          user: user,
+        );
+      },
     ),
   ],
 );

@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_youtube/extensions/int_extensions.dart';
+import 'package:flutter_youtube/extensions/schemas/user.dart';
+import 'package:flutter_youtube/extensions/user_extensions.dart';
 import 'package:go_router/go_router.dart';
 
 class ExtensionScreen extends StatelessWidget {
-  const ExtensionScreen({super.key});
+  const ExtensionScreen({
+    super.key,
+    required this.number,
+    required this.number2,
+    required this.user,
+  });
+
+  final int number;
+  final int number2;
+  final User user;
 
   @override
   Widget build(BuildContext context) {
-    int a = 90;
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -21,8 +30,12 @@ class ExtensionScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text("int: $a"),
-            Text("toHour: ${a.toHour()}"),
+            Text("int: $number"),
+            Text("toHour: ${number.toHour()}"),
+            Text("int: $number2"),
+            Text("toHour: ${number2.toHour()}"),
+            Text("user: ${user.last_login_time}"),
+            Text("toDateTime: ${user.lastLoginTime}"),
           ],
         ),
       ),
