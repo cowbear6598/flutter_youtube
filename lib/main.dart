@@ -41,12 +41,19 @@ class _MyHomePageState extends State<MyHomePage> {
       last_login_time: 1695741130,
     );
 
-    context.push('/extension?number=30&number2=40', extra: user);
+    // context.push('/extension?number=30&number2=40', extra: user);
 
-    // context.pushNamed('extension', pathParameters: {
-    //   'number': '30',
-    //   'number2': '50',
-    // });
+    context.pushNamed(
+      'extension',
+      pathParameters: {
+        'number3': '70',
+      },
+      queryParameters: {
+        'number': '30',
+        'number2': '50',
+      },
+      extra: user,
+    );
   }
 
   @override

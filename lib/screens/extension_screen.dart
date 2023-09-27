@@ -9,11 +9,13 @@ class ExtensionScreen extends StatelessWidget {
     super.key,
     required this.number,
     required this.number2,
+    required this.number3,
     required this.user,
   });
 
   final int number;
   final int number2;
+  final int number3;
   final User user;
 
   @override
@@ -34,6 +36,8 @@ class ExtensionScreen extends StatelessWidget {
             Text("toHour: ${number.toHour()}"),
             Text("int: $number2"),
             Text("toHour: ${number2.toHour()}"),
+            Text("int: $number3"),
+            Text("toHour: ${number3.toHour()}"),
             Text("user: ${user.last_login_time}"),
             Text("toDateTime: ${user.lastLoginTime}"),
           ],
