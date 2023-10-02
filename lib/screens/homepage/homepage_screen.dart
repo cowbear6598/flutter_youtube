@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_youtube/go_router/go_router_builder.dart';
+import 'package:flutter_youtube/screens/route_observer/route_observer_screen_route.dart';
 import 'package:flutter_youtube/types/user.dart';
 import 'package:flutter_youtube/screens/extension/extension_screen_route.dart';
 
@@ -33,6 +34,10 @@ class HomepageScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () => _goToExtensionScreen(context),
               child: const Text("Extension Screen"),
+            ),
+            ElevatedButton(
+              onPressed: () => RouteObserverScreenRoute().push(context),
+              child: const Text("Route Observer Screen"),
             ),
           ],
         ),

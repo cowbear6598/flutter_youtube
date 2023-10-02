@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_youtube/go_router/go_router_builder.dart';
 import 'package:go_router/go_router.dart';
+
+final routeObserver = RouteObserver();
 
 final router = GoRouter(
   redirect: (context, state) {
@@ -11,4 +14,5 @@ final router = GoRouter(
     return null;
   },
   routes: $appRoutes,
+  observers: [routeObserver],
 );

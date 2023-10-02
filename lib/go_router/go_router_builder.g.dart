@@ -18,6 +18,10 @@ RouteBase get $homepageScreenRoute => GoRouteData.$route(
           path: 'extension',
           factory: $ExtensionScreenRouteExtension._fromState,
         ),
+        GoRouteData.$route(
+          path: 'route_observer',
+          factory: $RouteObserverScreenRouteExtension._fromState,
+        ),
       ],
     );
 
@@ -67,4 +71,22 @@ extension $ExtensionScreenRouteExtension on ExtensionScreenRoute {
 
   void replace(BuildContext context) =>
       context.replace(location, extra: $extra);
+}
+
+extension $RouteObserverScreenRouteExtension on RouteObserverScreenRoute {
+  static RouteObserverScreenRoute _fromState(GoRouterState state) =>
+      RouteObserverScreenRoute();
+
+  String get location => GoRouteData.$location(
+        '/route_observer',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }

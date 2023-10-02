@@ -17,12 +17,33 @@ class ExtensionScreenRoute extends GoRouteData {
   final User $extra;
 
   @override
-  Widget build(BuildContext context, GoRouterState state) {
-    return ExtensionScreen(
-      number: number,
-      number2: number2,
-      number3: number3,
-      user: $extra,
+  Page<void> buildPage(BuildContext context, GoRouterState state) {
+    return CustomTransitionPage(
+      key: state.pageKey,
+      transitionDuration: const Duration(milliseconds: 100),
+      reverseTransitionDuration: const Duration(milliseconds: 500),
+      child: ExtensionScreen(
+        number: number,
+        number2: number2,
+        number3: number3,
+        user: $extra,
+      ),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return FadeTransition(
+          opacity: animation,
+          child: child,
+        );
+      },
     );
   }
+
+// @override
+// Widget build(BuildContext context, GoRouterState state) {
+//   return ExtensionScreen(
+//     number: number,
+//     number2: number2,
+//     number3: number3,
+//     user: $extra,
+//   );
+// }
 }
