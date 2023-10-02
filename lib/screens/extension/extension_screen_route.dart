@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_youtube/extensions/schemas/user.dart';
-import 'package:flutter_youtube/screens/extension_screen.dart';
+import 'package:flutter_youtube/types/user.dart';
+import 'package:flutter_youtube/screens/extension/extension_screen.dart';
 import 'package:go_router/go_router.dart';
 
 class ExtensionScreenRoute extends GoRouteData {

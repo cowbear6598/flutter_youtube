@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_youtube/extensions/int_extensions.dart';
-import 'package:flutter_youtube/extensions/schemas/user.dart';
+import 'package:flutter_youtube/types/user.dart';
 import 'package:flutter_youtube/extensions/user_extensions.dart';
 import 'package:go_router/go_router.dart';
 
