@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_youtube/extensions/schemas/user.dart';
 import 'package:flutter_youtube/go_router/app_router.dart';
-import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,58 +20,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routerConfig: router,
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  void _goToExtensionScreen() {
-    User user = User(
-      last_login_time: 1695741130,
-    );
-
-    // context.push('/extension?number=30&number2=40', extra: user);
-
-    context.pushNamed(
-      'extension',
-      pathParameters: {
-        'number3': '70',
-      },
-      queryParameters: {
-        'number': '30',
-        'number2': '50',
-      },
-      extra: user,
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: _goToExtensionScreen,
-              child: Text("Extension Screen"),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
