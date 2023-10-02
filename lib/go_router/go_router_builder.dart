@@ -11,7 +11,7 @@ part 'go_router_builder.g.dart';
   routes: [
     TypedGoRoute<ExtensionScreenRoute>(
       path: 'extension',
-    )
+    ),
   ],
 )
 class HomepageScreenRoute extends GoRouteData {

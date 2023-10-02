@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_youtube/go_router/go_router_builder.dart';
 import 'package:flutter_youtube/types/user.dart';
 import 'package:flutter_youtube/screens/extension/extension_screen_route.dart';
-import 'package:flutter_youtube/go_router/go_router_builder.dart';
 
 class HomepageScreen extends StatelessWidget {
   const HomepageScreen({super.key});
