@@ -29,8 +29,11 @@ class _RouteObserverScreenState extends State<RouteObserverScreen> with RouteAwa
   @override
   void initState() {
     super.initState();
+    
+    print("initState");
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      print("addPostFrameCallback: initState");
       routeObserver.subscribe(this, ModalRoute.of(context)!);
     });
   }
@@ -59,6 +62,8 @@ class _RouteObserverScreenState extends State<RouteObserverScreen> with RouteAwa
   void dispose() {
     routeObserver.unsubscribe(this);
     super.dispose();
+    
+    print("dispose");
   }
 
   @override
@@ -74,11 +79,12 @@ class _RouteObserverScreenState extends State<RouteObserverScreen> with RouteAwa
         ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Route Observer Screen'),
               ElevatedButton(
                 onPressed: () => _toExtensionScreen(context),
-                child: const Text("Homepage Screen"),
+                child: const Text("Extension Screen"),
               )
             ],
           ),

@@ -31,6 +31,7 @@ class ExtensionScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("int: $number"),
             Text("toHour: ${number.toHour()}"),
