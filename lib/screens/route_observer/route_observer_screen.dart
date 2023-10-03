@@ -68,6 +68,8 @@ class _RouteObserverScreenState extends State<RouteObserverScreen> with RouteAwa
 
   @override
   Widget build(BuildContext context) {
+    print("build - RouteObserverScreen");
+
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,

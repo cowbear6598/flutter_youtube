@@ -39,6 +39,8 @@ class _ExtensionScreenState extends State<ExtensionScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print("build - ExtensionScreen");
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
