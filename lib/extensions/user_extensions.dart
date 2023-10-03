@@ -1,4 +1,3 @@
-
 import 'package:flutter_youtube/types/user.dart';
 
 extension UserExtensions on User {

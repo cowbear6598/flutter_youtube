@@ -36,14 +36,4 @@ class ExtensionScreenRoute extends GoRouteData {
       },
     );
   }
-
-// @override
-// Widget build(BuildContext context, GoRouterState state) {
-//   return ExtensionScreen(
-//     number: number,
-//     number2: number2,
-//     number3: number3,
-//     user: $extra,
-//   );
-// }
 }

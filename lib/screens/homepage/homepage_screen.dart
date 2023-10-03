@@ -7,7 +7,7 @@ import 'package:flutter_youtube/screens/extension/extension_screen_route.dart';
 class HomepageScreen extends StatelessWidget {
   const HomepageScreen({super.key});
 
-  void _goToExtensionScreen(BuildContext context) {
+  void _toExtensionScreen(BuildContext context) {
     User user = User(
       last_login_time: 1695741130,
     );
@@ -32,7 +32,7 @@ class HomepageScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () => _goToExtensionScreen(context),
+              onPressed: () => _toExtensionScreen(context),
               child: const Text("Extension Screen"),
             ),
             ElevatedButton(
