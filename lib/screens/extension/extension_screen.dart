@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_youtube/extensions/int_extensions.dart';
+import 'package:flutter_youtube/go_router/go_router_builder.dart';
 import 'package:flutter_youtube/types/user.dart';
 import 'package:flutter_youtube/extensions/user_extensions.dart';
 import 'package:go_router/go_router.dart';
 
-class ExtensionScreen extends StatelessWidget {
+class ExtensionScreen extends StatefulWidget {
   const ExtensionScreen({
     super.key,
     required this.number,
@@ -17,6 +18,24 @@ class ExtensionScreen extends StatelessWidget {
   final int number2;
   final int number3;
   final User user;
+
+  @override
+  State<ExtensionScreen> createState() => _ExtensionScreenState();
+}
+
+class _ExtensionScreenState extends State<ExtensionScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    print("initState - ExtensionScreen");
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print("dispose - ExtensionScreen");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +52,18 @@ class ExtensionScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("int: $number"),
-            Text("toHour: ${number.toHour()}"),
-            Text("int: $number2"),
-            Text("toHour: ${number2.toHour()}"),
-            Text("int: $number3"),
-            Text("toHour: ${number3.toHour()}"),
-            Text("user: ${user.last_login_time}"),
-            Text("toDateTime: ${user.lastLoginTime}"),
+            Text("int: ${widget.number}"),
+            Text("toHour: ${widget.number.toHour()}"),
+            Text("int: ${widget.number2}"),
+            Text("toHour: ${widget.number2.toHour()}"),
+            Text("int: ${widget.number3}"),
+            Text("toHour: ${widget.number3.toHour()}"),
+            Text("user: ${widget.user.last_login_time}"),
+            Text("toDateTime: ${widget.user.lastLoginTime}"),
+            ElevatedButton(
+              onPressed: () => HomepageScreenRoute().push(context),
+              child: const Text("Homepage"),
+            )
           ],
         ),
       ),

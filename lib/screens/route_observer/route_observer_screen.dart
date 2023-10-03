@@ -30,32 +30,32 @@ class _RouteObserverScreenState extends State<RouteObserverScreen> with RouteAwa
   void initState() {
     super.initState();
     
-    print("initState");
+    print("initState - RouteObserverScreen");
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      print("addPostFrameCallback: initState");
+      print("addPostFrameCallback: initState - RouteObserverScreen");
       routeObserver.subscribe(this, ModalRoute.of(context)!);
     });
   }
 
   @override
   void didPush() {
-    print('didPush');
+    print('didPush - RouteObserverScreen');
   }
 
   @override
   void didPushNext() {
-    print('didPushNext');
+    print('didPushNext - RouteObserverScreen');
   }
 
   @override
   void didPop() {
-    print('didPop');
+    print('didPop - RouteObserverScreen');
   }
 
   @override
   void didPopNext() {
-    print('didPopNext');
+    print('didPopNext - RouteObserverScreen');
   }
 
   @override
@@ -63,7 +63,7 @@ class _RouteObserverScreenState extends State<RouteObserverScreen> with RouteAwa
     routeObserver.unsubscribe(this);
     super.dispose();
     
-    print("dispose");
+    print("dispose - RouteObserverScreen");
   }
 
   @override
