@@ -29,7 +29,7 @@ class _RouteObserverScreenState extends State<RouteObserverScreen> with RouteAwa
   @override
   void initState() {
     super.initState();
-    
+
     print("initState - RouteObserverScreen");
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -62,7 +62,7 @@ class _RouteObserverScreenState extends State<RouteObserverScreen> with RouteAwa
   void dispose() {
     routeObserver.unsubscribe(this);
     super.dispose();
-    
+
     print("dispose - RouteObserverScreen");
   }
 
@@ -87,7 +87,7 @@ class _RouteObserverScreenState extends State<RouteObserverScreen> with RouteAwa
               ElevatedButton(
                 onPressed: () => _toExtensionScreen(context),
                 child: const Text("Extension Screen"),
-              )
+              ),
             ],
           ),
         ));
