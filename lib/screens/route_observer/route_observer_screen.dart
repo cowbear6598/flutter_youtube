@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_youtube/components/app_bar/common_app_bar.dart';
 import 'package:flutter_youtube/go_router/app_router.dart';
 import 'package:flutter_youtube/go_router/go_router_builder.dart';
 import 'package:flutter_youtube/screens/extension/extension_screen_route.dart';
 import 'package:flutter_youtube/types/user.dart';
-import 'package:go_router/go_router.dart';
 
 class RouteObserverScreen extends StatefulWidget {
   const RouteObserverScreen({super.key});
@@ -71,14 +71,7 @@ class _RouteObserverScreenState extends State<RouteObserverScreen> with RouteAwa
     print("build - RouteObserverScreen");
 
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text('Route Observer Screen'),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () => context.pop(),
-          ),
-        ),
+        appBar: commonAppBar(context, "Route Observer"),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

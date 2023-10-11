@@ -22,6 +22,10 @@ RouteBase get $homepageScreenRoute => GoRouteData.$route(
           path: 'route_observer',
           factory: $RouteObserverScreenRouteExtension._fromState,
         ),
+        GoRouteData.$route(
+          path: 'sliver',
+          factory: $SliverScreenRouteExtension._fromState,
+        ),
       ],
     );
 
@@ -79,6 +83,24 @@ extension $RouteObserverScreenRouteExtension on RouteObserverScreenRoute {
 
   String get location => GoRouteData.$location(
         '/route_observer',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SliverScreenRouteExtension on SliverScreenRoute {
+  static SliverScreenRoute _fromState(GoRouterState state) =>
+      SliverScreenRoute();
+
+  String get location => GoRouteData.$location(
+        '/sliver',
       );
 
   void go(BuildContext context) => context.go(location);

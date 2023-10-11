@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_youtube/screens/route_observer/route_observer_screen_route.dart';
+import 'package:flutter_youtube/screens/sliver/sliver_screen_route.dart';
 import 'package:flutter_youtube/types/user.dart';
 import 'package:flutter_youtube/screens/extension/extension_screen_route.dart';
 import 'package:flutter_youtube/screens/homepage/homepage_screen.dart';
@@ -12,6 +13,7 @@ part 'go_router_builder.g.dart';
   routes: [
     TypedGoRoute<ExtensionScreenRoute>(path: 'extension'),
     TypedGoRoute<RouteObserverScreenRoute>(path: 'route_observer'),
+    TypedGoRoute<SliverScreenRoute>(path: 'sliver'),
   ],
 )
 class HomepageScreenRoute extends GoRouteData {
